@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "[*] Installing dependencies..."
 pip install -r requirements.txt
-echo "[*] Done! Run 'python run.py' to start ArPy."
+echo "[*] Done! Please See Documentation Before Using ArPy"

@@ -2,13 +2,13 @@
 
 ## Screenshots
 
-### 1. Help Menu
-![Banner and Help](banner.png)
+### 1. Menu Method
+![Menu Method](img1.png)
 
-The help menu shows all available commands and options.
+The menu list shows all available method and short description.
 
 ### 2. Usage Example
-![Usage Example](usage_example.png)
+![Usage Example](img2.png)
 
 Example of encrypting a file with progress bar.
 
@@ -37,7 +37,7 @@ python run.py --list
 ## Output Files
 
 All output files are saved in the `docs/` directory:
-- `banner.png` - ArPy banner and help menu
-- `usage_example.png` - Encryption example with progress bar
+- `img1.png` - ArPy banner and help menu
+- `img2.png` - Encryption example with progress bar
 - `help_output.txt` - Full help text
 - `list_output.txt` - List of all methods

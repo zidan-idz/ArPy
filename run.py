@@ -8,12 +8,17 @@ import sys
 import os
 import argparse
 import webbrowser
+import codecs
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
+    sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict')
 from main import __version__, __author__, __github__, __issues__
 from main.encrypt import Encryptor
 from main.decrypt import Decryptor
 from main.utils import read_file, save_file
 from main.constants import BANNER
 from main.color import success, error, info, warning, Color
+from main.features import Features
 
 def main():
     parser = argparse.ArgumentParser(
@@ -28,6 +33,7 @@ Examples:
   python run.py -d auto encrypted.py
   python run.py --list
   python run.py --report
+  python run.py --update
 
 Author: {__author__}
 Github: {__github__}
@@ -46,6 +52,8 @@ Github: {__github__}
                         help='List all available methods')
     parser.add_argument('--report', action='store_true',
                         help='Open GitHub issues page to report bugs')
+    parser.add_argument('--update', action='store_true',
+                        help='Update the tool to the latest version')
     parser.add_argument('-v', '--version', action='version', 
                         version=f'ArPy v{__version__} by {__author__}')
     parser.add_argument('file', nargs='?', help='Input file to process')
@@ -64,7 +72,12 @@ Github: {__github__}
             print(success("Browser opened successfully"))
         except Exception as e:
             print(warning(f"Could not open browser: {e}"))
-            print(info(f"Please visit: {__issues__}"))
+            print(info(f"Please manually visit: {__issues__}"))
+        return
+    
+    # Update tool
+    if args.update:
+        Features().update_tool()
         return
     
     # List methods

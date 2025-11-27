@@ -1,0 +1,14 @@
+Available Encryption Methods:
+  • marshal    - Compile to bytecode
+  • zlib       - Compress using zlib
+  • base64     - Encode using Base64
+  • base32     - Encode using Base32
+  • base16     - Encode using Base16
+  • lambda     - Lambda + XOR obfuscation
+  • bitwise    - Boolean/Bitwise arithmetic
+  • binhex     - Massive integer encoding
+  • charlen    - Character length encoding
+  • revzlib    - Reverse + Zlib + Base64
+
+Decryption Methods:
+  • All encryption methods + 'auto' (auto-detect)

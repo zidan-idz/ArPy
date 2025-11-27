@@ -2,13 +2,9 @@
 
 <div align="center">
 
-```
-▄████▄ ▄▄▄▄  █████▄ ▄▄ ▄▄ 
-██▄▄██ ██▄█▄ ██▄▄█▀ ▀███▀ 
-██  ██ ██ ██ ██       █   
-```
+![ArPy Banner](docs/banner.png)
 
-**A simple Python obfuscation tool for code protection**
+***OPEN SOURCE FOR EDUCATION PURPOSE***
 
 [![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -18,11 +14,11 @@
 
 ## Screenshots
 
-### Banner & Help
-![ArPy Banner](docs/banner.png)
+### Menu & Commands
+![ArPy Method](docs/img1.png)
 
 ### Usage Example
-![ArPy Usage](docs/usage_example.png)
+![ArPy Usage](docs/img2.png)
 
 
 ## Features
@@ -31,7 +27,8 @@
 - 🔓 **Auto-Decryption** - Intelligent method detection
 - ⚡ **Fast & Efficient** - Optimized with progress bars
 - 🎨 **Clean CLI** - simple command-line interface
-- 📦 **Lightweight** - Minimal dependencies
+- 📦 **Open Source** - Fully transparent, community‑driven, and easy to extend
+
 
 ## Installation
 
@@ -143,35 +140,10 @@ options:
   --version             show program's version number and exit
 ```
 
-## Project Structure
-
-```
-ArPy/
-├── run.py              # Main CLI entry point
-├── main/
-│   ├── __init__.py     # Package info
-│   ├── color.py        # Custom color module
-│   ├── constants.py    # Banner and constants
-│   ├── encrypt.py      # Encryption logic
-│   ├── decrypt.py      # Decryption logic
-│   └── utils.py        # Utility functions
-├── docs/
-│   ├── README.md       # Documentation
-│   ├── banner.png      # Screenshot: Banner & Help
-│   ├── usage_example.png # Screenshot: Usage Example
-│   ├── help_output.txt # Full help text
-│   └── list_output.txt # Methods list
-├── requirements.txt    # Dependencies
-├── install.sh          # Installation script
-├── CHANGELOG.md        # Version history
-├── LICENSE             # MIT License
-└── README.md           # This file
-```
-
 ## Dependencies
 
 - Python 3.7+
-- tqdm (for progress bars)
+- tqdm 4.66+ (for progress bars)
 
 ## License
 
@@ -182,15 +154,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Zidan IDz**
 
 - GitHub: [@zidan-idz](https://github.com/zidan-idz)
-- WhatsApp: 083892081021
+- Facebook: [@Zidan_IDz](https://facebook.com/muhammadraid.zaidani)
+- Instagram: [@zidan_idz](https://instagram.com/zidan_idz)
 
 ## Disclaimer
 
 This tool is for educational purposes and legitimate code protection only. Do not use it for malicious purposes. The author is not responsible for any misuse of this software.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Changelog
 
@@ -199,13 +168,11 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 ### v3.0 (2025-11-27)
 - Complete rewrite with modular architecture
 - Simple CLI interface with argparse
-- Custom color module (no external color dependencies)
 - 10 encryption methods
 - Auto-detection decryption
-- Progress bars for long operations
-- Comprehensive documentation
+- Progress bars for long operations (with tqdm)
 - Centralized version management
-- Bug reporting system (--report)
+- Added Bug reporting system (--report)
 
 ---
 

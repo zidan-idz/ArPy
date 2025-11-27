@@ -107,6 +107,10 @@ class Decryptor:
     def decrypt_charlen(self, content):
         """Decrypt CharLen encoding."""
         try:
+            # Check for marker
+            if "# ArPy Encrypted: CHARLEN" in content:
+                return "# CharLen encoding detected (wrapped in marshal, cannot fully reverse)\n# Original: " + content[:100] + "..."
+                
             # This is wrapped in marshal, so first try to detect the pattern
             # d=[...] exec(''.join([chr(len(i)) for i in d]))
             if "chr(len(i)) for i in d" in content:
@@ -128,8 +132,23 @@ class Decryptor:
         return content
 
     def _try_decrypt_step(self, content):
-        """Try all decryption methods in sequence."""
-        # Try each method
+        """Try to decrypt based on marker or try all methods."""
+        # Check for marker
+        m = re.match(r"# ArPy Encrypted: ([A-Z0-9]+)", content)
+        if m:
+            method_name = m.group(1).lower()
+            if method_name == 'marshal': return self.decrypt_marshal(content)
+            elif method_name == 'zlib': return self.decrypt_zlib(content)
+            elif method_name == 'base64': return self.decrypt_base64(content)
+            elif method_name == 'base32': return self.decrypt_base32(content)
+            elif method_name == 'base16': return self.decrypt_base16(content)
+            elif method_name == 'lambda': return self.decrypt_lambda(content)
+            elif method_name == 'bitwise': return self.decrypt_bitwise(content)
+            elif method_name == 'binhex': return self.decrypt_binhex(content)
+            elif method_name == 'charlen': return self.decrypt_charlen(content)
+            elif method_name == 'revzlib': return self.decrypt_revzlib(content)
+        
+        # Fallback to trying all methods
         for method in [
             self.decrypt_base64,
             self.decrypt_base32,
@@ -138,6 +157,7 @@ class Decryptor:
             self.decrypt_lambda,
             self.decrypt_binhex,
             self.decrypt_revzlib,
+            self.decrypt_marshal, # Added marshal to fallback
         ]:
             result = method(content)
             if result != content:
