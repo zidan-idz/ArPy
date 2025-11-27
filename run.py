@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ArPy - Python Obfuscation Tool v3.1
+ArPy - Simple Python Obfuscation Tool v3.1
 Author: Zidan IDz
 """
 

@@ -1,8 +1,8 @@
-# ArPy - Python Obfuscation Tool
+# ArPy - Simple Python Obfuscation Tool
 
 <div align="center">
 
-![ArPy Banner](docs/banner.png)
+![ArPy Banner](docs/banner.webp)
 
 ***OPEN SOURCE FOR EDUCATION PURPOSE***
 
@@ -15,10 +15,10 @@
 ## Screenshots
 
 ### Menu & Commands
-![ArPy Method](docs/img1.png)
+![ArPy Method](docs/img1.webp)
 
 ### Usage Example
-![ArPy Usage](docs/img2.png)
+![ArPy Usage](docs/img2.webp)
 
 
 ## Features

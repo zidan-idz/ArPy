@@ -3,12 +3,12 @@
 ## Screenshots
 
 ### 1. Menu Method
-![ArPy Method](img1.png)
+![ArPy Method](img1.webp)
 
 The menu list shows all available methods and short descriptions.
 
 ### 2. Usage Example
-![Usage Example](img2.png)
+![Usage Example](img2.webp)
 
 Example of encrypting a file with progress bar.
 
@@ -37,7 +37,7 @@ python run.py --list
 ## Output Files
 
 All output files are saved in the `docs/` directory:
-- `img1.png` - ArPy menu method
-- `img2.png` - Encryption example
+- `img1.webp` - ArPy menu method
+- `img2.webp` - Encryption example
 - `help_output.txt` - Full help text
 - `list_output.txt` - List of all methods
