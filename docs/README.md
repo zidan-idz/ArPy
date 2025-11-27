@@ -3,9 +3,9 @@
 ## Screenshots
 
 ### 1. Menu Method
-![Menu Method](img1.png)
+![ArPy Method](img1.png)
 
-The menu list shows all available method and short description.
+The menu list shows all available methods and short descriptions.
 
 ### 2. Usage Example
 ![Usage Example](img2.png)
@@ -37,7 +37,7 @@ python run.py --list
 ## Output Files
 
 All output files are saved in the `docs/` directory:
-- `img1.png` - ArPy banner and help menu
-- `img2.png` - Encryption example with progress bar
+- `img1.png` - ArPy menu method
+- `img2.png` - Encryption example
 - `help_output.txt` - Full help text
 - `list_output.txt` - List of all methods

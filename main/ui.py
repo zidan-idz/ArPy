@@ -1,4 +1,4 @@
-from colorama import Fore, Style
+from .color import Color
 from .constants import BANNER
 
 class UI:
@@ -9,7 +9,7 @@ class UI:
 
     def show_main_menu(self):
         self.show_banner()
-        print(f"{Fore.CYAN}MAIN MENU{Style.RESET_ALL}\n")
+        print(f"{Color.CYAN}MAIN MENU{Color.RESET}\n")
         options = [
             ("01", "Encrypt File"),
             ("02", "Decrypt File"),
@@ -19,14 +19,14 @@ class UI:
             ("00", "Exit")
         ]
         for num, name in options:
-            print(f"  {Fore.YELLOW}{num}.{Style.RESET_ALL} {name}")
+            print(f"  {Color.YELLOW}{num}.{Color.RESET} {name}")
         
-        choice = input(f"\n{Fore.GREEN}Select:{Style.RESET_ALL} ").strip()
+        choice = input(f"\n{Color.GREEN}Select:{Color.RESET} ").strip()
         return choice
 
     def show_encrypt_menu(self):
         self.show_banner()
-        print(f"{Fore.CYAN}ENCRYPTION METHODS{Style.RESET_ALL}\n")
+        print(f"{Color.CYAN}ENCRYPTION METHODS{Color.RESET}\n")
         options = [
             ("01", "Marshal (Bytecode)"),
             ("02", "Zlib (Compress)"),
@@ -42,14 +42,14 @@ class UI:
             ("00", "Back")
         ]
         for num, name in options:
-            print(f"  {Fore.YELLOW}{num}.{Style.RESET_ALL} {name}")
+            print(f"  {Color.YELLOW}{num}.{Color.RESET} {name}")
         
-        choice = input(f"\n{Fore.GREEN}Select:{Style.RESET_ALL} ").strip()
+        choice = input(f"\n{Color.GREEN}Select:{Color.RESET} ").strip()
         return choice
 
     def show_decrypt_menu(self):
         self.show_banner()
-        print(f"{Fore.CYAN}DECRYPTION METHODS{Style.RESET_ALL}\n")
+        print(f"{Color.CYAN}DECRYPTION METHODS{Color.RESET}\n")
         options = [
             ("01", "Marshal (Bytecode)"),
             ("02", "Zlib (Compress)"),
@@ -65,29 +65,29 @@ class UI:
             ("00", "Back")
         ]
         for num, name in options:
-            print(f"  {Fore.YELLOW}{num}.{Style.RESET_ALL} {name}")
+            print(f"  {Color.YELLOW}{num}.{Color.RESET} {name}")
         
-        choice = input(f"\n{Fore.GREEN}Select:{Style.RESET_ALL} ").strip()
+        choice = input(f"\n{Color.GREEN}Select:{Color.RESET} ").strip()
         return choice
 
     def get_file_path(self):
-        return input(f"\n{Fore.CYAN}File path:{Style.RESET_ALL} ").strip()
+        return input(f"\n{Color.CYAN}File path:{Color.RESET} ").strip()
 
     def get_iterations(self):
         try:
-            iterations = int(input(f"{Fore.CYAN}Iterations (max 50) [1]:{Style.RESET_ALL} ").strip() or "1")
+            iterations = int(input(f"{Color.CYAN}Iterations (max 50) [1]:{Color.RESET} ").strip() or "1")
             return min(iterations, 50)
         except ValueError:
             return 1
 
     def show_success(self, path):
-        print(f"\n{Fore.GREEN}[SUCCESS]{Style.RESET_ALL} Saved to: {Fore.YELLOW}{path}{Style.RESET_ALL}")
-        input(f"\n{Fore.WHITE}Press Enter to continue...{Style.RESET_ALL}")
+        print(f"\n{Color.GREEN}[SUCCESS]{Color.RESET} Saved to: {Color.YELLOW}{path}{Color.RESET}")
+        input(f"\n{Color.WHITE}Press Enter to continue...{Color.RESET}")
 
     def show_error(self, msg):
-        print(f"\n{Fore.RED}[ERROR]{Style.RESET_ALL} {msg}")
-        input(f"\n{Fore.WHITE}Press Enter to continue...{Style.RESET_ALL}")
+        print(f"\n{Color.RED}[ERROR]{Color.RESET} {msg}")
+        input(f"\n{Color.WHITE}Press Enter to continue...{Color.RESET}")
 
     def show_message(self, msg):
         print(f"\n{msg}")
-        input(f"\n{Fore.WHITE}Press Enter to continue...{Style.RESET_ALL}")
+        input(f"\n{Color.WHITE}Press Enter to continue...{Color.RESET}")

@@ -8,7 +8,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-3.0-orange.svg)](https://github.com/zidan-idz/ArPy)
+[![Version](https://img.shields.io/badge/Version-3.1-orange.svg)](https://github.com/zidan-idz/ArPy)
 
 </div>
 
@@ -23,11 +23,11 @@
 
 ## Features
 
-- 🔒 **10 Encryption Methods** - Multiple obfuscation techniques
-- 🔓 **Auto-Decryption** - Intelligent method detection
-- ⚡ **Fast & Efficient** - Optimized with progress bars
-- 🎨 **Clean CLI** - simple command-line interface
-- 📦 **Open Source** - Fully transparent, community‑driven, and easy to extend
+- 🔒 **10 Encryption Methods** - Multiple obfuscation techniques.
+- 🔓 **Auto-Decryption** - Intelligent method detection.
+- ⚡ **Fast & Efficient** - Optimized with progress bars.
+- 🎨 **Clean CLI** - Simple command-line interface.
+- 📦 **Open Source** - Fully transparent, community-driven, and easy to extend.
 
 
 ## Installation
@@ -95,34 +95,12 @@ python run.py --list
 All encryption methods are supported for decryption, plus:
 - `auto` - Automatically detect and decrypt
 
-## Examples
-
-### Example 1: Simple Obfuscation
-```bash
-# Encrypt a script
-python run.py -e base64 my_script.py
-
-# Output: my_script_enc.py
-```
-
-### Example 2: Multi-Layer Encryption
-```bash
-# Apply 10 iterations of marshal encoding
-python run.py -e marshal -i 10 sensitive_code.py
-```
-
-### Example 3: Decrypt Unknown Method
-```bash
-# Auto-detect and decrypt
-python run.py -d auto obfuscated_file.py
-```
-
 ## Command-Line Options
 
 ```
 usage: run.py [-h] [-e METHOD] [-d METHOD] [-i N] [-o FILE] [--list] [--version] [file]
 
-ArPy - Python Obfuscation Tool v3.0
+ArPy - Python Obfuscation Tool v3.1
 
 positional arguments:
   file                  Input file to process
@@ -165,14 +143,11 @@ This tool is for educational purposes and legitimate code protection only. Do no
 
 See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
-### v3.0 (Latest Version)
-- Complete rewrite with modular architecture
-- Simple CLI interface with argparse
-- 10 encryption methods
-- Auto-detection decryption
-- Progress bars for long operations (with tqdm)
-- Centralized version management
-- Added Bug reporting system (--report)
+### v3.1 (Latest Version)
+A maintenance and stability update focusing on reliability and correctness.
+- Fixed `bitwise` and `charlen` decryption logic (now fully reversible).
+- Added comprehensive test suite for stability.
+- Improved clarity in `marshal` decryption feedback.
 
 ---
 

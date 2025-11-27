@@ -86,9 +86,15 @@ class Decryptor:
         """Decrypt Bitwise boolean arithmetic."""
         try:
             # Pattern: exec(''.join([chr(...), chr(...), ...]))
-            # This is complex to reverse, we'll just detect it
-            if "chr(True" in content or "chr((True<<" in content:
-                return "# Bitwise encoding detected (complex to reverse)\n# Original: " + content[:100] + "..."
+            m = re.search(r"exec\(''\.join\((\[.*?\])\)\)", content, re.DOTALL)
+            if m:
+                # We can safely eval this because we know it's just a list of chr(math)
+                # produced by our encryptor
+                list_str = m.group(1)
+                # Basic validation to ensure it looks like our output
+                if "chr(" in list_str and "True" in list_str:
+                    decoded_list = eval(list_str)
+                    return "".join(decoded_list)
         except: pass
         return content
 
@@ -109,12 +115,24 @@ class Decryptor:
         try:
             # Check for marker
             if "# ArPy Encrypted: CHARLEN" in content:
-                return "# CharLen encoding detected (wrapped in marshal, cannot fully reverse)\n# Original: " + content[:100] + "..."
-                
-            # This is wrapped in marshal, so first try to detect the pattern
-            # d=[...] exec(''.join([chr(len(i)) for i in d]))
-            if "chr(len(i)) for i in d" in content:
-                return "# CharLen encoding detected (wrapped in marshal, cannot fully reverse)\n# Original: " + content[:100] + "..."
+                # Extract the marshalled data
+                m = re.search(r"exec\(marshal\.loads\((b'.*?')\)\)", content, re.DOTALL)
+                if m:
+                    byte_data = eval(m.group(1))
+                    code_obj = marshal.loads(byte_data)
+                    
+                    # Inspect constants for the 'n' strings
+                    found_strings = []
+                    for const in code_obj.co_consts:
+                        if isinstance(const, tuple):
+                             for item in const:
+                                 if isinstance(item, str) and set(item) == {'n'}:
+                                     found_strings.append(item)
+                        elif isinstance(const, str) and set(const) == {'n'} and len(const) > 0:
+                            found_strings.append(const)
+                    
+                    if found_strings:
+                        return "".join([chr(len(s)) for s in found_strings])
         except: pass
         return content
 
