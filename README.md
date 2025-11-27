@@ -165,7 +165,7 @@ This tool is for educational purposes and legitimate code protection only. Do no
 
 See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
-### v3.0 (2025-11-27)
+### v3.0 (Latest Version)
 - Complete rewrite with modular architecture
 - Simple CLI interface with argparse
 - 10 encryption methods
