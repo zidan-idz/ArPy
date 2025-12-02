@@ -1,14 +1,17 @@
-# ArPy - Simple Python Obfuscation Tool
-
 <div align="center">
 
 ![ArPy Banner](docs/banner.webp)
 
-***OPEN SOURCE FOR EDUCATION PURPOSE***
+<div align="center">
 
-[![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-3.1-orange.svg)](https://github.com/zidan-idz/ArPy)
+[![Author](https://img.shields.io/badge/Author-Zidan%20IDz-%2300BFFF?style=for-the-badge&logo=github)](https://github.com/zidan-idz)
+[![Version](https://img.shields.io/badge/Version-3.1%20-%2300BFFF?style=for-the-badge)](https://github.com/zidan-idz/Theme-Me/releases)
+[![Language](https://img.shields.io/badge/Language-Python-%2300BFFF?style=for-the-badge&logo=python)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-%2300BFFF?style=for-the-badge)](LICENSE)
+
+</div>
+
+
 
 </div>
 
@@ -150,7 +153,3 @@ A maintenance and stability update focusing on reliability and correctness.
 - Improved clarity in `marshal` decryption feedback.
 
 ---
-
-<div align="center">
-Made with ❤️ by Zidan IDz
-</div>
